@@ -1,0 +1,6 @@
+{
+  "name": "polymer-todo",
+  "short_name": "polymer-todo",
+  "start_url": "/",
+  "display": "standalone"
+}

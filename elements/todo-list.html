@@ -1,0 +1,23 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="../elements/todo-item.html">
+
+<dom-module id="todo-list">
+  <template>
+    <template is="dom-repeat" items="{{todos}}">
+      <todo-item item="[[item]]"></todo-item>
+      <!--<button on-click="deleteItem(index)">✖️</button>-->
+    </template>
+  </template>
+  <script>
+    class ItemList extends Polymer.Element {
+      static get is () {
+        return "todo-list"
+      }
+//      deleteItem(index){ todo index 渡す方法調べる
+//        console.log(index)
+//      }
+    }
+    customElements.define(ItemList.is, ItemList)
+  </script>
+</dom-module>

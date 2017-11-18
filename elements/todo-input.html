@@ -1,0 +1,21 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="todo-input">
+  <template>
+    <input type="text" id="todo">
+    <button on-click="addItem">add!</button>
+  </template>
+  <script>
+    class ItemInput extends Polymer.Element{
+      static get is(){
+        return 'todo-input'
+      }
+
+      addItem(){
+        this.push('todos', {text: this.$.todo.value})
+        this.$.todo.value = ''
+      }
+    }
+    customElements.define(ItemInput.is, ItemInput)
+  </script>
+</dom-module>

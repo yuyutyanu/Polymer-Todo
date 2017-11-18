@@ -1,0 +1,20 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="todo-item">
+  <template>
+      <div>[[item.text]]</div>
+  </template>
+  <script>
+    class TodoItem extends Polymer.Element{
+      static get is (){
+        return 'todo-item'
+      }
+      static get properties (){
+          return {
+            item:Object
+          }
+      }
+    }
+    customElements.define(TodoItem.is,TodoItem)
+  </script>
+</dom-module>
