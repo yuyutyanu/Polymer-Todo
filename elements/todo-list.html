@@ -5,8 +5,10 @@
 <dom-module id="todo-list">
   <template>
     <template is="dom-repeat" items="{{todos}}">
-      <todo-item item="[[item]]"></todo-item>
-      <!--<button on-click="deleteItem(index)">✖️</button>-->
+      <div>
+        <todo-item item="[[item]]"></todo-item>
+        <button on-click="deleteItem">✖️</button>
+      </div>
     </template>
   </template>
   <script>
@@ -14,9 +16,10 @@
       static get is () {
         return "todo-list"
       }
-//      deleteItem(index){ todo index 渡す方法調べる
-//        console.log(index)
-//      }
+
+      deleteItem (e) {
+        this.splice('todos', e.model.index, 1)
+      }
     }
     customElements.define(ItemList.is, ItemList)
   </script>
